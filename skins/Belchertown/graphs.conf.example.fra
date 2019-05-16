@@ -146,10 +146,10 @@ tooltip_date_format = "LLL"
 [homepage]
     # Chart Timespan Defaults
     title = "Aujourd'hui"
-	show_button = true
+    show_button = true
     button_text = "Accueil"
     time_length = today
-	tooltip_date_format = "LLL"
+    tooltip_date_format = "LLL"
     gapsize = 300000 # This should be your archive_interval from weewx.conf multiplied by 1000 to get milliseconds. Standard is 5 minutes
 
     [[chart1]]
@@ -200,16 +200,16 @@ tooltip_date_format = "LLL"
         type = spline
         [[[barometer]]]
             color = "#BECC00"
-			yAxis_tickInterval = 0.01
+            yAxis_tickInterval = 0.01
             name = Pression
             
 [day]
     # Chart Timespan Defaults
     title = "Graphiques du jour"
-	show_button = true
+    show_button = true
     button_text = "Jour"
     time_length = today
-	tooltip_date_format = "LLL"
+    tooltip_date_format = "LLL"
     gapsize = 300000 # This should be your archive_interval from weewx.conf multiplied by 1000 to get milliseconds. Standard is 5 minutes
 
     [[chart1]]
@@ -265,10 +265,10 @@ tooltip_date_format = "LLL"
 [week]
     # Chart Timespan Defaults
     title = "Graphiques de la semaine"
-	show_button = true
+    show_button = true
     button_text = "Semaine"
-	time_length = 604800 # Last 7 days
-	tooltip_date_format = "LLLL"
+    time_length = 604800 # Last 7 days
+    tooltip_date_format = "LLLL"
     aggregate_type = max
     aggregate_interval = 3600 # 1 hour
     gapsize = 3600000 # 1 hour in milliseconds
@@ -328,10 +328,10 @@ tooltip_date_format = "LLL"
 [month]
     # Chart Timespan Defaults
     title = "Graphiques du mois"
-	show_button = true
+    show_button = true
     button_text = "Mois"
     type = spline
-	time_length = 2592000 # Last 30 days
+    time_length = 2592000 # Last 30 days
     tooltip_date_format = "dddd LL"								   
     aggregate_type = max
     aggregate_interval = 86400 # 1 day
@@ -390,10 +390,10 @@ tooltip_date_format = "LLL"
 [year]
     # Chart Timespan Defaults
     title = "Graphiques de l'année"
-	show_button = true
+    show_button = true
     button_text = "Année"
     type = spline
-	time_length = year
+    time_length = year
     tooltip_date_format = "dddd LL"								   
     aggregate_type = max
     aggregate_interval = 86400 # 1 day
