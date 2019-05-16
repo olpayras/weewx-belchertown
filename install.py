@@ -32,11 +32,13 @@ class ExfoliationInstaller(ExtensionInstaller):
                                           'skins/Belchertown/index.html.tmpl',
                                           'skins/Belchertown/about.inc.example',
                                           'skins/Belchertown/graphs.conf.example',
+                                          'skins/Belchertown/graphs.conf.example.fra',
                                           'skins/Belchertown/page-header.inc',
                                           'skins/Belchertown/manifest.json.tmpl',
                                           'skins/Belchertown/records.inc.example',
                                           'skins/Belchertown/robots.txt',
                                           'skins/Belchertown/skin.conf',
+                                          'skins/Belchertown/skin.conf.fra',
                                           'skins/Belchertown/history.inc',
                                           'skins/Belchertown/belchertown-dark.min.css',
                                           'skins/Belchertown/style.css'
