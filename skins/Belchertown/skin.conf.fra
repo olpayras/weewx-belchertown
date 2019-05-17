@@ -89,8 +89,8 @@
         
         # HTML Header Meta Tags and HTML Title. These labels have a default value
         # set inside of header.html.tmpl. Leave as "" to use the default value.
-        html_site_title         = ""
-        html_site_description   = ""
+        html_title         = ""
+        html_description   = ""
 
         # Footer Information
         footer_copyright_text = "Mon site météo"
