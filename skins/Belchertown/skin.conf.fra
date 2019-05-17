@@ -13,12 +13,9 @@
     belchertown_locale = "auto"
     theme = light
     theme_toggle_enabled = 1
-	site_title = "Mon site météo"								 
+    site_title = "Mon site météo"								 
     logo_image = ""
-
     radar_html = ""
-    footer_copyright_text = "Mon site météo"
-    footer_disclaimer_text = "Ne prenez jamais de décision importante basées sur les données de ce site."
 
     # Station Observations. Special observation rainWithRainRate combines Daily Rain with Rain Rate in 1 line
     station_observations = "barometer", "dewpoint", "outHumidity", "rainWithRainRate"
@@ -32,20 +29,11 @@
     graph_page_show_all_button = 1
     graph_page_default_graphgroup = "day"
     highcharts_homepage_graphgroup = "homepage"
-
-
+    
     # If you've extended your weewx database to include the below, you can enable them
     show_apptemp = 0
     show_windrun = 0
-
-    # Default page headers
-    home_page_header = "Conditions actuelles"
-    graphs_page_header = "Observations graphiques"
-    records_page_header = "Records"
-    reports_page_header = "Rapports"
-    about_page_header = "A Propos de ma station météo"
-    powered_by = "Observations réalisées par une <a href="/about" target="_blank">station météo personelle</a>"
-    
+        
     # MQTT Websockets defaults
     mqtt_websockets_enabled = 0
     mqtt_websockets_host = ""
@@ -73,19 +61,15 @@
     earthquake_maxradiuskm = 1000
     earthquake_stale = 10740
 
-    # Social Share Button Defaults
+    # Social Share Button Defaults. Define the text below under Labels
     facebook_enabled = 0
     twitter_enabled = 0
-    twitter_owner = ""
-    twitter_hashtags = "weewx #weather"
 
     # Google Analytics
     #googleAnalyticsId = UA-12345678-1
 
     # This is the display of the Pi Kiosk which is in the /pi folder
     pi_kiosk_bold = "false"
-
-
 
 ###############################################################################
 
@@ -102,20 +86,38 @@
         cloudbase       = Base nuages
         visibility      = Visibilité
         windrun         = Vent
-
+        
         # HTML Header Meta Tags and HTML Title. These labels have a default value
         # set inside of header.html.tmpl. Leave as "" to use the default value.
         html_site_title         = ""
         html_site_description   = ""
+
+        # Footer Information
+        footer_copyright_text = "Mon site météo"
+        footer_disclaimer_text = "Ne prenez jamais de décision importante basées sur les données de ce site."
+        
+        # Twitter Social Share
+        twitter_text = "Visitez mon site: Observations météorologiques"
+        twitter_owner = "YourTwitterUsernameHere"
+        twitter_hashtags = "weewx #météo"
+        
         # Station Observation Table
         rainWithRainRate     = Précipitations
-    
+        
         # Navigation Menu
         nav_home        = Accueil
         nav_graphs      = Graphiques
         nav_records     = Records
         nav_reports     = Historique
         nav_about       = A propos de...
+        
+        # Default page headers
+        home_page_header        = "Conditions actuelles"
+        graphs_page_header      = "Observations graphiques"
+        records_page_header     = "Records"
+        reports_page_header     = "Rapports"
+        about_page_header       = "A Propos de ma station météo"
+        powered_by              = "Observations réalisées par une <a href="/about" target="_blank">station météo personelle</a>"
         
         # DarkSky translations
         alert_in_effect             = à partir de
@@ -156,7 +158,7 @@
         mqtt_websockets_failed      = Echec de connexion à la station météo. Essayez plus tard SVP!
         mqtt_websockets_lost        = Connexion perdue à la station météo. Essayez plus tard SVP!
         weather_snapshots           = Mini/Maxi météo du jour et du mois.
-        weather_snapshots_link      = Visualiser tous les records météo.
+        weather_snapshots_link      = Visualiser tous les enregistrements.
         snapshot_high               = Haut
         snapshot_low                = Bas
         snapshot_today_high_wind    = Vent le plus fort
@@ -216,7 +218,7 @@
         reports_title               = Données NOAA
         reports_click_here_link     = Cliquez ici
         reports_view_more           = pour voir cet historique directement ou cliquez sur un mois ou une année pour charger les données NOAA.
-
+        
         # moment.js default labels formats
         time_earthquake                         = "LLL"
         time_lastUpdated                        = "LL à LTS"
@@ -233,7 +235,7 @@
         time_records_page_rainfall_range_begin  = "DD MMMM"
         time_records_page_rainfall_range_end    = "LL"
         
-###############################################################################
+ ###############################################################################
 
 [HistoryLabels]
 
@@ -534,7 +536,7 @@
             template = pi/index.html.tmpl
             
         [[[manifest]]]
-			encoding = utf8
+            encoding = utf8
             template = manifest.json.tmpl
             
 ###############################################################################
