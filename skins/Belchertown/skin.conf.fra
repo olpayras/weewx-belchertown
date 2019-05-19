@@ -150,13 +150,13 @@
         lowest_temperature          = Bas
         forecast_header             = Prévision à 8 jours
         header_last_updated         = Mise à jour le
-        mqtt_websockets_connecting  = Connexion à la station météo données en temps réel.
+        mqtt_websockets_connecting  = Tentative de connexion à la station météo.
         mqtt_websockets_waiting     = Connecté. En attente de données.
-        mqtt_websockets_connected   = Connecté à la station météo. Données recues
+        mqtt_websockets_connected   = Connecté à la station météo. Données reçues
         mqtt_websockets_stopped     = Mises à jour arrêtées
         mqtt_websockets_continue    = Mises à jour temps réel
-        mqtt_websockets_failed      = Echec de connexion à la station météo. Essayez plus tard SVP!
-        mqtt_websockets_lost        = Connexion perdue à la station météo. Essayez plus tard SVP!
+        mqtt_websockets_failed      = Echec de connexion à la station météo. Veuillez essayer plus tard SVP!
+        mqtt_websockets_lost        = Connexion perdue à la station météo. Veuillez actualiser votre page SVP!
         weather_snapshots           = Mini/Maxi météo du jour et du mois.
         weather_snapshots_link      = Visualiser tous les enregistrements.
         snapshot_high               = Haut
@@ -470,7 +470,7 @@
         
     [[Ordinates]]    
         # The ordinal directions. The last one should be for no wind direction
-        directions = N, NNE, NE, ENE, E, ESE, SE, SSE, S, SSW, SW, WSW, W, WNW, NW, NNW, N/A 
+        directions = N, NNE, NE, ENE, E, ESE, SE, SSE, S, SSO, SO, OSO, O, ONO, NO, NNO, N/A 
 
     [[DegreeDays]]
         # This section sets the base temperatures used for the calculation
