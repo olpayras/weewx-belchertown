@@ -89,8 +89,8 @@
         
         # HTML Header Meta Tags and HTML Title. These labels have a default value
         # set inside of header.html.tmpl. Leave as "" to use the default value.
-        html_title         = ""
-        html_description   = ""
+        html_title         = "Conditions : " + $station.location
+        html_description   = "Conditions météo observées par une station météo personnelle et le logiciel weewx"
         
         # Footer Information
         footer_copyright_text = "Mon site météo"
@@ -158,7 +158,7 @@
         mqtt_websockets_failed      = Echec de connexion à la station météo. Veuillez essayer plus tard SVP!
         mqtt_websockets_lost        = Connexion perdue à la station météo. Veuillez actualiser votre page SVP!
         weather_snapshots           = Mini/Maxi du jour et du mois.
-        weather_snapshots_link      = Tous les enregistrements.
+        weather_snapshots_link      = Voir tous les records
         snapshot_high               = Haut
         snapshot_low                = Bas
         snapshot_today_high_wind    = Vent le plus fort
