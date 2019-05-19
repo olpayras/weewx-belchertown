@@ -2,7 +2,7 @@
 # SKIN CONFIGURATION FILE                                                     #
 # Copyright (c) 2010 Tom Keffer <tkeffer@gmail.com>                           #
 # Updated for the Belchertown Skin by Pat O'Brien, 2019                       #
-# French translation with History feature by Olivier Payrastre, 15/5/2019     #
+# French translation with History feature by Olivier Payrastre, 19/5/2019     #
 ###############################################################################
 
 [Extras]
@@ -47,7 +47,7 @@
     
     # Enable reloading of images in the index hook pages. Useful if there's webcams in these sections.
     reload_hook_images = 0
-
+    
     # Forecast defaults
     forecast_enabled = 0
     darksky_secret_key = ""
@@ -91,7 +91,7 @@
         # set inside of header.html.tmpl. Leave as "" to use the default value.
         html_title         = ""
         html_description   = ""
-
+        
         # Footer Information
         footer_copyright_text = "Mon site météo"
         footer_disclaimer_text = "Ne prenez jamais de décision importante basées sur les données de ce site."
@@ -146,19 +146,19 @@
         wind_speed                  = Vent
         wind_gust                   = Rafales
         feels_like                  = Ressenti
-        highest_temperature          = Haut
+        highest_temperature         = Haut
         lowest_temperature          = Bas
         forecast_header             = Prévision à 8 jours
         header_last_updated         = Mise à jour le
         mqtt_websockets_connecting  = Tentative de connexion à la station météo.
         mqtt_websockets_waiting     = Connecté. En attente de données.
-        mqtt_websockets_connected   = Connecté à la station météo. Données reçues
-        mqtt_websockets_stopped     = Mises à jour arrêtées
-        mqtt_websockets_continue    = Mises à jour temps réel
+        mqtt_websockets_connected   = Connecté à la station météo. Données reçues :
+        mqtt_websockets_stopped     = Mises à jour stoppées
+        mqtt_websockets_continue    = Actualiser
         mqtt_websockets_failed      = Echec de connexion à la station météo. Veuillez essayer plus tard SVP!
         mqtt_websockets_lost        = Connexion perdue à la station météo. Veuillez actualiser votre page SVP!
-        weather_snapshots           = Mini/Maxi météo du jour et du mois.
-        weather_snapshots_link      = Visualiser tous les enregistrements.
+        weather_snapshots           = Mini/Maxi du jour et du mois.
+        weather_snapshots_link      = Tous les enregistrements.
         snapshot_high               = Haut
         snapshot_low                = Bas
         snapshot_today_high_wind    = Vent le plus fort
@@ -173,6 +173,33 @@
         earthquake_magnitude        = Magnitude
         homepage_graphs_link        = Voir plus.        
         copyright                   = Copyright
+        
+        # Almanac Popup
+        close                       = Fermer
+        almanac_more_details        = Plus de détails
+        almanac_modal_title         = Ephéméride
+        sun_always_down             = En arrière plan
+        sun_always_up               = En avant plan
+        more_than_yesterday         = de plus qu'hier
+        less_than_yesterday         = de moins qu'hier
+        celestial                   = Céleste
+        start_civil_twilight        = Début crépuscule civil
+        rise                        = Lever
+        transit                     = Transition
+        set                         = Coucher
+        end_civil_twilight          = Fin crépuscule civil
+        azimuth                     = Azimut
+        altitude                    = Altitude
+        right_ascension             = Ascension droite
+        declination                 = Declinaison
+        equinox                     = Equinoxe
+        solstice                    = Solstice
+        total_daylight              = Total heure de clarté
+        full_moon                   = Pleine
+        new_moon                    = Nouvelle
+        phase                       = Phase
+        full                        = Pleine
+        install_pyephem             = Installer pyephem pour obtenir l'éphéméride.
         
         # Graphs Page Text and Titles
         graphs_page_all_button      = Tous
@@ -229,7 +256,7 @@
         time_darksky_alert_expires              = "LLL"
         time_darksky_forecast_date              = "ddd DD/M"
         time_forecast_last_updated              = "LLL"
-        time_mqtt_websockets_last_updated       = "LL, LTS"
+        time_mqtt_websockets_last_updated       = "LL à LTS"
         time_records_page_full_date             = "LLL"
         time_records_page_month_day_year        = "LL"
         time_records_page_rainfall_range_begin  = "DD MMMM"
