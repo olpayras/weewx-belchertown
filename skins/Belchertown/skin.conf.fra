@@ -2,7 +2,7 @@
 # SKIN CONFIGURATION FILE                                                     #
 # Copyright (c) 2010 Tom Keffer <tkeffer@gmail.com>                           #
 # Updated for the Belchertown Skin by Pat O'Brien, 2019                       #
-# French translation with History feature by Olivier Payrastre, 19/5/2019     #
+# French translation with History feature by Olivier Payrastre, 20/5/2019     #
 ###############################################################################
 
 [Extras]
@@ -21,8 +21,8 @@
     station_observations = "barometer", "dewpoint", "outHumidity", "rainWithRainRate"
     
     # Manifest Settings
-    manifest_name = "Mon site météo"
-    manifest_short_name = "MWW"
+    manifest_name = "Chargement - Site météo"
+    manifest_short_name = "Météo"
 
     # Highcharts settings
     highcharts_enabled = 1
