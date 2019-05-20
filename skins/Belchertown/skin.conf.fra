@@ -183,7 +183,7 @@
         more_than_yesterday         = de plus qu'hier
         less_than_yesterday         = de moins qu'hier
         celestial                   = Céleste
-        start_civil_twilight        = Début crépuscule civil
+        start_civil_twilight        = Début aube civile
         rise                        = Lever
         transit                     = Transition
         set                         = Coucher
@@ -191,10 +191,10 @@
         azimuth                     = Azimut
         altitude                    = Altitude
         right_ascension             = Ascension droite
-        declination                 = Declinaison
+        declination                 = Déclinaison
         equinox                     = Equinoxe
         solstice                    = Solstice
-        total_daylight              = Total heure de clarté
+        total_daylight              = Total heures clarté
         full_moon                   = Pleine
         new_moon                    = Nouvelle
         phase                       = Phase
