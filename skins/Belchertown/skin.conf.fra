@@ -89,7 +89,7 @@
         
         # HTML Header Meta Tags and HTML Title. These labels have a default value
         # set inside of header.html.tmpl. Leave as "" to use the default value.
-        html_title         = "Conditions : " + $station.location
+        html_title         = "Conditions météo"
         html_description   = "Conditions météo observées par une station météo personnelle et le logiciel weewx"
         
         # Footer Information
