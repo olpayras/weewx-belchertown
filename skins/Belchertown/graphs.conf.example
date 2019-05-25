@@ -297,6 +297,7 @@ tooltip_date_format = "LLL"
     
     [[chart4]]
         title = Barometer
+        aggregate_type = avg
         [[[barometer]]]
             color = "#BECC00"
 
@@ -355,6 +356,7 @@ tooltip_date_format = "LLL"
     
     [[chart4]]
         title = Barometer
+        aggregate_type = avg
         [[[barometer]]]
             color = "#BECC00"
         
@@ -412,6 +414,7 @@ tooltip_date_format = "LLL"
     
     [[chart4]]
         title = Barometer
+        aggregate_type = avg
         [[[barometer]]]
             color = "#BECC00"
         
