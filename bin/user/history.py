@@ -108,8 +108,8 @@ class MyXSearch(SearchList):
         self.search_list_extension = {}
 
         # Make bootstrap specific labels in config file available to
-        if 'HistoryLabels' in generator.skin_dict:
-            self.search_list_extension['HistoryLabels'] = generator.skin_dict['HistoryLabels']
+        if 'Labels' in generator.skin_dict:
+            self.search_list_extension['Labels'] = generator.skin_dict['Labels']
         else:
             syslog.syslog(syslog.LOG_DEBUG, "%s: No bootstrap specific labels found" % os.path.basename(__file__))
 
