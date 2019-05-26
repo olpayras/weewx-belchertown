@@ -44,11 +44,7 @@
             <article class="weewx reports" itemscope itemtype="https://schema.org/CreativeWork">
 
                 #include "page-header.inc"
-                #if os.path.exists("history.inc")
-                    #include "history.inc"
-                #end if
-
-                <div class="noaa_reports">
+                    <div class="noaa_reports">
                     <H1>$obs.label.reports_title</H1>
                     <div class="row">
                         <div class="col-sm-12 wx-year-row">
@@ -61,7 +57,9 @@
                         <pre id="noaa_contents"></pre>
                     </div> <!-- END noaa_report_container -->
                 </div> <!-- END noaa_reports -->
-
+                #if os.path.exists("history.inc")
+                    #include "history.inc"
+                #end if
             </article>
         </main>
     </div>
