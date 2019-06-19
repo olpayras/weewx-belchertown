@@ -45,6 +45,7 @@ Screenshot of light and dark modes
   * [Translating the Skin](#translating-the-skin)
   * [A Note About Date and Time Formatting in Your Locale](#a-note-about-date-and-time-formatting-in-your-locale)
   * [Frequently Asked Questions](#frequently-asked-questions)
+  * [Raspberry Pi Console](#raspberry-pi-console)
   * [Donate](#donate)
   * [Credits](#credits)
 
@@ -263,6 +264,7 @@ For ease of readability I have broken them out into separate tables. However you
 | highcharts_homepage_graphgroup | "day" | This allows you to have a different graph group on the front page. Please see the [Chart Wiki Page](https://github.com/poblabs/weewx-belchertown/wiki/Belchertown-Charts-Documentation).
 | googleAnalyticsId | "" | Enter your Google Analytics ID if you are using one
 | pi_kiosk_bold | "false" | If you use a Raspberry Pi with a 3.5" screen, this allows you to set the full page's content to bold ("true") or not ("false"). 
+| pi_theme | "auto" | Just as with the `theme` option, options are: light, dark, auto. This defines which theme your site will use. Light is a white theme. Dark is a charcoal theme. Auto mode automatically changes your theme to light at the sunrise hour and dark at the sunset hour.
 | webpage_autorefresh | 0 | If you are not using MQTT Websockets, you can define when to automatically reload the website on a set interval. The time is in milliseconds. Example: 300000 is 5 minutes. Set to 0 to disable this option. 
 | reload_hook_images | 0 | Enable or disable the refreshing of images within the hook areas.
 | reload_images_radar | 300 | Seconds to reload the radar image if `reload_hook_images` is enabled and MQTT Websockets are enabled. -1 disables this option.
@@ -413,6 +415,19 @@ Explanation (this comes right from the moment.js documentation):
 * `MMM` gives you the short name of the month like "Jan". If you want "January" it'd be `MMMM`
 * `HH` is the hour in 24 hour format with a leading 0, like 02. If you don't want the leading 0 it would be `H`.
 * `mm` is the minute with a leading 0, like 08. If you don't want the leading 0, use `m`.
+
+## Raspberry Pi Console
+Belchertown skin comes with a smaller website tailored for the Raspberry Pi 3.5" TFT screen. I personally use this as a second console, and it works great. When used with MQTT Websockets, the timeout is disabled by default so it's always connected. If there's a connection error, the Pi page will keep retrying to connect to the MQTT Websocket server. This means once you're setup you can set it and forget it. 
+
+If you're interested in this type of setup, you'll need these items:
+* A Raspberry Pi. I'm using the [Raspberry Pi 3 B+](https://amzn.to/2MReZhz) model
+* An [SD Card for your Raspberry Pi](https://amzn.to/2IjxVRN)
+* The [Adafruit 3.5" Raspberry Pi TFT Screen Hat](https://amzn.to/2KiZxso) (other models may work, your experience may vary)
+* Get the Raspberry Pi setup with the easy NOOBS installer and get it updated.
+* Once it's setup and the screen is also setup [run this tutorial for getting it into Kiosk mode](https://obrienlabs.net/setup-raspberry-pi-kiosk-chromium/). 
+* Point your new Raspberry Pi Kiosk to your weather website's `/pi` page, and you should be good to go!
+
+![raspberry pi light and dark themes](https://user-images.githubusercontent.com/3484775/59552332-7fc22c00-8f53-11e9-8a84-7c3335f47249.png)
 
 ## Frequently Asked Questions
 
