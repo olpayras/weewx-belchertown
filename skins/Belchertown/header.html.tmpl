@@ -1,3 +1,4 @@
+#encoding UTF-8
 ## Determine initial skin theme CSS class from config
 ## Auto theme setting determines which CSS class to use based on the hour
 #set $bodyTheme = ""
@@ -79,6 +80,7 @@
         <link rel='stylesheet' href='//stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css' type='text/css' media='all' />
         <link rel='stylesheet' href='$relative_url/style.css?ver=#echo int( time.time() ) #' type='text/css' media='all' id="belchertownStyle" />
         <link rel='stylesheet' href='$relative_url/belchertown-dark.min.css?ver=#echo int( time.time() ) #' type='text/css' media='all' id="belchertownStyle" />
+        <link rel='stylesheet' href='$relative_url/custom.css?ver=#echo int( time.time() ) #' type='text/css' media='all' id="belchertownCustomStyle" />
         
         <link rel="manifest" href="$relative_url/manifest.json">
         <link rel="apple-touch-icon" href="$relative_url/images/station.png">
@@ -100,6 +102,7 @@
         #end if
         <script type='text/javascript' src='//code.highcharts.com/stock/7.1.2/highstock.js'></script>
         <script type='text/javascript' src='//code.highcharts.com/7.1.2/highcharts-more.js'></script>
+        <script type='text/javascript' src='//code.highcharts.com/7.1.2/modules/exporting.js'></script>
         <script type='text/javascript' src='$relative_url/js/belchertown.js?#echo int( time.time() )#'></script>
         <script>
             // Set the session variables for the theme

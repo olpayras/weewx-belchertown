@@ -262,6 +262,8 @@ For ease of readability I have broken them out into separate tables. However you
 | graph_page_show_all_button | 1 | Setting to 1 will enable an "All" button which will allow visitors to see all your graphs on one page in a condensed format with 2 graphs on a row (like the home page).
 | graph_page_default_graphgroup | "day" | This is the graph group that will load when visitors go to your Graphs page and have not clicked on a button to select a specific group. You can select "all" here and it will load all your graph groups within graphs.conf
 | highcharts_homepage_graphgroup | "day" | This allows you to have a different graph group on the front page. Please see the [Chart Wiki Page](https://github.com/poblabs/weewx-belchertown/wiki/Belchertown-Charts-Documentation).
+| highcharts_decimal | "auto" | This allows you to specify a custom decimal point. If set to auto or missing, the default locale decimal point will be used. 
+| highcharts_thousands | "auto" | This allows you to specify a custom thousands separator. If set to auto or missing, the default locale thousands separator will be used. 
 | googleAnalyticsId | "" | Enter your Google Analytics ID if you are using one
 | pi_kiosk_bold | "false" | If you use a Raspberry Pi with a 3.5" screen, this allows you to set the full page's content to bold ("true") or not ("false"). 
 | pi_theme | "auto" | Just as with the `theme` option, options are: light, dark, auto. This defines which theme your site will use. Light is a white theme. Dark is a charcoal theme. Auto mode automatically changes your theme to light at the sunrise hour and dark at the sunset hour.
@@ -298,7 +300,7 @@ For ease of readability I have broken them out into separate tables. However you
 | mqtt_websockets_host | "" | The MQTT broker hostname or IP. **Versions 0.8.2 and prior** this option is called `mqtt_host`
 | mqtt_websockets_port | 8080 | The port of the MQTT broker's **Websockets** port. Check your broker's documentation. **Versions 0.8.2 and prior** this option is called `mqtt_port`
 | mqtt_websockets_ssl | 0 | Set to 1 if your broker is using SSL. **Versions 0.8.2 and prior** this option is called `mqtt_ssl`
-| mqtt_websockets_topic | "" | The topic to subscribe to for your weather data. **Versions 0.8.2 and prior** this option is called `mqtt_topic`
+| mqtt_websockets_topic | "" | The topic to subscribe to for your weather data. Typically this should end in `/loop`. (e.g. `weather/loop`) depending on your [MQTT] extension settings.  **Versions 0.8.2 and prior** this option is called `mqtt_topic`
 | disconnect_live_website_visitor | 1800000 | The number of seconds after a visitor has loaded your page that we disconnect them from the live streaming updates. The idea here is to save your broker from a streaming connection that never ends. Time is in milliseconds. 0 = disabled. 300000 = 5 minutes. 1800000 = 30 minutes
 
 ### Forecast Options
@@ -477,6 +479,9 @@ If you're interested in this type of setup, you'll need these items:
 ---
 * Q: Do I have to use the graphs?
 * A: Nope! If you have it disabled we will hide those portions of the site. It comes packaged with this theme already though, so you can leave it enabled. 
+---
+* Q: I have weather alerts enabled, why do I see so many duplicates alerts?
+* A: These "duplicates" come from DarkSky, however if you click on each one you'll see they aren't duplicates. They have unique links to unique alerts. Perhaps you're in a region that borders other regions? I'm not sure. As a result of this, I can't easily filter them out and take the risk of removing an alert that's important to you. It's best to reach DarkSky through your developer portal and ask this question of them. 
 ---
 * Q: Why does the skin take a while to generate sometimes?
 * A: This is because of the graph system. That file goes through your archive's day, week, month and year values, and all time values to generate the graphs. Depending on how big your database, and how slow your system is (like a Raspberry Pi) is this could take a little longer. If you want to speed it up you can disable the charts or upgrade to better hardware. 
