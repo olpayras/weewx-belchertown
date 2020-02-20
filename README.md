@@ -1,6 +1,8 @@
 
 # Belchertown weewx skin
 
+[![Latest Stable Version](https://img.shields.io/github/v/release/poblabs/weewx-belchertown.svg?style=flat-square)](https://github.com/poblabs/weewx-belchertown/releases) [![Donate](https://img.shields.io/badge/Donate-PayPal-blue.svg?style=flat-square&amp;logo=paypal&amp;colorA=aaaaaa)](https://obrienlabs.net/go/donate)
+
 This skin (or theme, or template) is for the [weewx weather software](http://weewx.com) and is modeled after my website [BelchertownWeather.com](https://belchertownweather.com). I originally developed that website with custom coded features but always used weewx as the backend archive software. It was a good fit to remove my customizations and port the site to a weewx skin that anyone can use.
 
 Features include:
@@ -45,6 +47,7 @@ Screenshot of light and dark modes
   * [Translating the Skin](#translating-the-skin)
   * [A Note About Date and Time Formatting in Your Locale](#a-note-about-date-and-time-formatting-in-your-locale)
   * [Frequently Asked Questions](#frequently-asked-questions)
+  * [Raspberry Pi Console](#raspberry-pi-console)
   * [Donate](#donate)
   * [Credits](#credits)
 
@@ -130,7 +133,7 @@ A sample `weewx-MQTT` extension config is below. Update the `server_url`, `topic
 ### MQTT Brokers
 
 #### Install your own MQTT Broker
-If you want to run your own MQTT broker, you can [follow these instructions that I've put together](https://obrienlabs.net/how-to-setup-your-own-mqtt-broker/). 
+If you want to run your own MQTT broker, you can [follow these instructions that I've put together](https://obrienlabs.net/go/mqttbroker). 
 
 #### Use a Public Broker
 These public brokers have been tested as working with MQTT and Websockets. If you have others to add the to the list, let me know.
@@ -267,7 +270,7 @@ For ease of readability I have broken them out into separate tables. However you
  |station_observations | "barometer", "dewpoint", "outHumidity", "rainWithRainRate" | This defines which observations you want displayed next to the radar. You can add, remove and re-order these observations. Options here **must** be weewx database schema names, except for `visibility` and `rainWithRainRate` which are custom options. `visibility` gets the visibility data from DarkSky (if enabled), and `rainWithRainRate` is the Rain Total and Rain Rate observations combined on 1 line.
 | manifest_name | "My Weather Website" | Progressive Webapp: This is the name of your site when adding it as an app to your mobile device.
 | manifest_short_name | "MWW" | Progressive Webapp: This is the name of the icon on your mobile device for your website's app.
-| radar_html | A windy.com iFrame | Full HTML Allowed. Recommended size 650 pixels wide by 360 pixels high. This URL will be used as the radar iFrame or image hyperlink. If you are using windy.com for live radar, they have instructions on how to embed their maps. Go to windy.com, click on Weather Radar on the right, then click on embed widget on page. Make sure you use the sizes recommended earier in this description.
+| radar_html | A windy.com iFrame | Full HTML Required. Recommended size 650 pixels wide by 360 pixels high. This URL will be used as the radar iFrame or image hyperlink. If you are using windy.com for live radar, they have instructions on how to embed their maps. Go to windy.com, click on Weather Radar on the right, then click on embed widget on page. Make sure you use the sizes recommended earier in this description. Example: `radar_html = "<a href='http://m.bom.gov.au/nsw/moss-vale/radar/' target='_blank'><img src='http://www.bom.gov.au/radar/IDR033.gif' width='360' height='360' /> </a>"`
 | show_apptemp | 0 | If you have [enabled Apparent Temperature](https://github.com/poblabs/weewx-belchertown/wiki/Adding-a-new-observation-type-to-the-WeeWX-database) (appTemp) in your database, you can show it on the site by enabling this. 
 | show_windrun | 0 | If you have [enabled Wind Run](https://github.com/poblabs/weewx-belchertown/wiki/Adding-a-new-observation-type-to-the-WeeWX-database) (windRun) in your database, you can show it on the site by enabling this.
 | show_cloudbase | 0 | If you have [enabled cloud base](https://github.com/poblabs/weewx-belchertown/wiki/Adding-a-new-observation-type-to-the-WeeWX-database) (cloudbase) in your database, you can show it on the site by enabling this.
@@ -310,7 +313,7 @@ For ease of readability I have broken them out into separate tables. However you
 | mqtt_websockets_host | "" | The MQTT broker hostname or IP. **Versions 0.8.2 and prior** this option is called `mqtt_host`
 | mqtt_websockets_port | 8080 | The port of the MQTT broker's **Websockets** port. Check your broker's documentation. **Versions 0.8.2 and prior** this option is called `mqtt_port`
 | mqtt_websockets_ssl | 0 | Set to 1 if your broker is using SSL. **Versions 0.8.2 and prior** this option is called `mqtt_ssl`
-| mqtt_websockets_topic | "" | The topic to subscribe to for your weather data. **Versions 0.8.2 and prior** this option is called `mqtt_topic`
+| mqtt_websockets_topic | "" | The topic to subscribe to for your weather data. Typically this should end in `/loop`. (e.g. `weather/loop`) depending on your [MQTT] extension settings.  **Versions 0.8.2 and prior** this option is called `mqtt_topic`
 | disconnect_live_website_visitor | 1800000 | The number of seconds after a visitor has loaded your page that we disconnect them from the live streaming updates. The idea here is to save your broker from a streaming connection that never ends. Time is in milliseconds. 0 = disabled. 300000 = 5 minutes. 1800000 = 30 minutes
 
 ### Forecast Options
@@ -428,6 +431,19 @@ Explanation (this comes right from the moment.js documentation):
 * `HH` is the hour in 24 hour format with a leading 0, like 02. If you don't want the leading 0 it would be `H`.
 * `mm` is the minute with a leading 0, like 08. If you don't want the leading 0, use `m`.
 
+## Raspberry Pi Console
+Belchertown skin comes with a smaller website tailored for the Raspberry Pi 3.5" TFT screen. I personally use this as a second console, and it works great. When used with MQTT Websockets, the timeout is disabled by default so it's always connected. If there's a connection error, the Pi page will keep retrying to connect to the MQTT Websocket server. This means once you're setup you can set it and forget it. 
+
+If you're interested in this type of setup, you'll need these items:
+* A Raspberry Pi. I'm using the [Raspberry Pi 3 B+](https://amzn.to/2MReZhz) model
+* An [SD Card for your Raspberry Pi](https://amzn.to/2IjxVRN)
+* The [Adafruit 3.5" Raspberry Pi TFT Screen Hat](https://amzn.to/2KiZxso) (other models may work, your experience may vary)
+* Get the Raspberry Pi setup with the easy NOOBS installer and get it updated.
+* Once it's setup and the screen is also setup [run this tutorial for getting it into Kiosk mode](https://obrienlabs.net/setup-raspberry-pi-kiosk-chromium/). 
+* Point your new Raspberry Pi Kiosk to your weather website's `/pi` page, and you should be good to go!
+
+![raspberry pi light and dark themes](https://user-images.githubusercontent.com/3484775/59552332-7fc22c00-8f53-11e9-8a84-7c3335f47249.png)
+
 ## Frequently Asked Questions
 
 * Q: How do I change my site title and page headers? I don't want to be called "My Weather Website"...
@@ -477,6 +493,9 @@ Explanation (this comes right from the moment.js documentation):
 * Q: Do I have to use the graphs?
 * A: Nope! If you have it disabled we will hide those portions of the site. It comes packaged with this theme already though, so you can leave it enabled. 
 ---
+* Q: I have weather alerts enabled, why do I see so many duplicates alerts?
+* A: These "duplicates" come from DarkSky, however if you click on each one you'll see they aren't duplicates. They have unique links to unique alerts. Perhaps you're in a region that borders other regions? I'm not sure. As a result of this, I can't easily filter them out and take the risk of removing an alert that's important to you. It's best to reach DarkSky through your developer portal and ask this question of them. 
+---
 * Q: Why does the skin take a while to generate sometimes?
 * A: This is because of the graph system. That file goes through your archive's day, week, month and year values, and all time values to generate the graphs. Depending on how big your database, and how slow your system is (like a Raspberry Pi) is this could take a little longer. If you want to speed it up you can disable the charts or upgrade to better hardware. 
 ---
@@ -505,9 +524,9 @@ Explanation (this comes right from the moment.js documentation):
 * A: `sudo wee_extension --uninstall Belchertown`
 
 ## Donate
-[![Donate](https://img.shields.io/badge/Donate-Support%20by%20Donating%20or%20Buying%20me%20a%20Coffee-blue.svg)](https://obrienlabs.net/donate)
+[![Donate](https://img.shields.io/badge/Donate-PayPal-blue.svg?style=flat-square&amp;logo=paypal&amp;colorA=aaaaaa)](https://obrienlabs.net/go/donate)
 
-This project took a lot of coffee to create. If you enjoy this skin and find some value from it, [click here to buy me another cup of coffee](https://obrienlabs.net/donate) :)
+This project took a lot of coffee to create. If you enjoy this skin and find some value from it, [click here to buy me another cup of coffee](https://obrienlabs.net/go/donate) :)
 
 ## Credits
 * DarkSky API for the weather forecasts.
