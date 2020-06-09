@@ -5,7 +5,7 @@
 #
 """Extends the Cheetah generator search list to add html historic data tables in a nice colour scheme.
 
-Tested on Weewx release 3.9.1. by Olivier Payrastre
+Tested on Weewx release 4.0.0.
 Works with all databases.
 Observes the units of measure and display formats specified in skin.conf.
 
@@ -16,12 +16,6 @@ To use it, add this generator to search_list_extensions in skin.conf:
 
 [CheetahGenerator]
     search_list_extensions = user.historygenerator.MyXSearch
-
-#####################################################################
-#                                                                   #
-# Modified BootstrapLabels by HistoryLabels to fit Belchertown Skin #
-#                                                                   #
-#####################################################################
 
 1) The $alltime tag:
 
@@ -108,7 +102,7 @@ class MyXSearch(SearchList):
         self.search_list_extension = {}
 
         # Make bootstrap specific labels in config file available to
-        if 'Labels' in generator.skin_dict:
+        if 'BootstrapLabels' in generator.skin_dict:
             self.search_list_extension['Labels'] = generator.skin_dict['Labels']
         else:
             syslog.syslog(syslog.LOG_DEBUG, "%s: No bootstrap specific labels found" % os.path.basename(__file__))
@@ -205,7 +199,7 @@ class MyXSearch(SearchList):
 
         font_color_list = table_options['fontColours'] if 'fontColours' in table_options else ['#000000'] * l
 
-        return zip(table_options['minvalues'], table_options['maxvalues'], table_options['colours'], font_color_list)
+        return list(zip(table_options['minvalues'], table_options['maxvalues'], table_options['colours'], font_color_list))
 
 
     def _statsHTMLTable(self, table_options, table_stats, table_name, binding, NOAA=False):
